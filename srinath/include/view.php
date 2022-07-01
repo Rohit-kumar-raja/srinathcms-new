@@ -6468,6 +6468,42 @@ if (isset($_GET["action"])) {
                                                                         </div>
                                                                     </div>
                                                                 </div>
+                                                                <div class="col-sm-6">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="card card-warning">
+                                                                            <div class="card-header">
+                                                                                <h3 class="card-title">Fee Payment</h3>
+                                                                            </div>
+                                                                            <div class="card-body pl-5 pr-5">
+                                                                                <!-- Minimal style -->
+                                                                                <div class="row">
+                                                                                    <div class="col-sm-6">
+                                                                                        <!-- checkbox -->
+                                                                                        <div class="form-group clearfix">
+                                                                                            <div class="icheck-warning d-inline">
+                                                                                                <input type="checkbox" id="checkboxPrimary15_1<?php echo $row["admin_id"]; ?>" name="permission_15[]" value="15_1" <?php if (isset($autority)) {
+                                                                                                                                                                                                                        $page_no_temp = 15;
+                                                                                                                                                                                                                        $flag = 0;
+                                                                                                                                                                                                                        if (isset($allAutority->$page_no_temp)) {
+                                                                                                                                                                                                                            $subMenus = explode("||", $allAutority->$page_no_temp);
+                                                                                                                                                                                                                            for ($i = 0; $i < count($subMenus); $i++) {
+                                                                                                                                                                                                                                if ($subMenus[$i] == "15_1") {
+                                                                                                                                                                                                                                    echo "checked";
+                                                                                                                                                                                                                                    $flag++;
+                                                                                                                                                                                                                                    break;
+                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                    } ?>>
+                                                                                                <label for="checkboxPrimary15_1<?php echo $row["admin_id"]; ?>">Fee Payment Approval</label>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6500,6 +6536,7 @@ if (isset($_GET["action"])) {
                                                 var permission_12 = "";
                                                 var permission_13 = "";
                                                 var permission_14 = "";
+                                                var permission_15 = "";
 
                                                 if ($("#checkboxPrimary1_1<?php echo $row["admin_id"]; ?>").is(":checked"))
                                                     permission_3 = permission_3 + $("#checkboxPrimary1_1<?php echo $row["admin_id"]; ?>").val() + "||";
@@ -6578,6 +6615,9 @@ if (isset($_GET["action"])) {
                                                 if ($("#checkboxPrimary11_11<?php echo $row["admin_id"]; ?>").is(":checked"))
                                                     permission_14 = permission_14 + $("#checkboxPrimary11_11<?php echo $row["admin_id"]; ?>").val() + "||";
 
+                                                if ($("#checkboxPrimary15_1<?php echo $row["admin_id"]; ?>").is(":checked"))
+                                                    permission_15 = permission_15 + $("#checkboxPrimary15_1<?php echo $row["admin_id"]; ?>").val() + "||";
+
                                                 var action = $("#action<?php echo $row["admin_id"]; ?>").val();
                                                 var edit_admin_id = $("#edit_admin_id<?php echo $row["admin_id"]; ?>").val();
                                                 var edit_admin_name = $("#edit_admin_name<?php echo $row["admin_id"]; ?>").val();
@@ -6585,7 +6625,7 @@ if (isset($_GET["action"])) {
                                                 // var edit_admin_password = $("#edit_admin_password<?php echo $row["admin_id"]; ?>").val();
                                                 var edit_admin_email = $("#edit_admin_email<?php echo $row["admin_id"]; ?>").val();
                                                 var edit_admin_mobile = $("#edit_admin_mobile<?php echo $row["admin_id"]; ?>").val();
-                                                var dataString = 'action=' + action + '&permission_3=' + permission_3 + '&permission_4=' + permission_4 + '&permission_5=' + permission_5 + '&permission_6=' + permission_6 + '&permission_7=' + permission_7 + '&permission_8=' + permission_8 + '&permission_9=' + permission_9 + '&permission_11=' + permission_11 + '&permission_12=' + permission_12 + '&permission_13=' + permission_13 + '&permission_14=' + permission_14 + '&edit_admin_id=' + edit_admin_id + '&edit_admin_name=' + edit_admin_name + '&edit_admin_username=' + edit_admin_username + '&edit_admin_email=' + edit_admin_email + '&edit_admin_mobile=' + edit_admin_mobile;
+                                                var dataString = 'action=' + action + '&permission_3=' + permission_3 + '&permission_4=' + permission_4 + '&permission_5=' + permission_5 + '&permission_6=' + permission_6 + '&permission_7=' + permission_7 + '&permission_8=' + permission_8 + '&permission_9=' + permission_9 + '&permission_11=' + permission_11 + '&permission_12=' + permission_12 + '&permission_13=' + permission_13 + '&permission_14=' + permission_14 + '&permission_15=' + permission_15 + '&edit_admin_id=' + edit_admin_id + '&edit_admin_name=' + edit_admin_name + '&edit_admin_username=' + edit_admin_username + '&edit_admin_email=' + edit_admin_email + '&edit_admin_mobile=' + edit_admin_mobile;
                                                 $.ajax({
                                                     url: 'include/controller.php',
                                                     type: 'POST',

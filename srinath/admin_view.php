@@ -802,7 +802,7 @@ include "include/authentication.php";
                   <div class="col-sm-12">
                     <div class="card card-warning">
                       <div class="card-header">
-                        <h3 class="card-title">Admit Card</h3>
+                        <h3 class="card-title">Fee Payment</h3>
                       </div>
                       <div class="card-body pl-5 pr-5">
                         <!-- Minimal style -->

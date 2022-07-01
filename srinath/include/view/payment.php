@@ -378,7 +378,8 @@
                                   <?php 
                                       if(!empty($row["admission_profile_image"])){ 
                                   ?>
-                                      <img class="profile-user-img " src="images/student_images/<?php echo $row["admission_profile_image"]; ?>" alt="Student profile picture">
+                                      <img class="profile-user-img " src=<?php echo  ' "data:image/jpeg;base64,' . base64_encode($row["admission_profile_image"]) . '" ' ?> id="photoBrowser" alt="Student profile picture">
+                                      
                                   <?php 
                                       } else if(strtolower($row["admission_gender"]) == "female"){  
                                   ?>
@@ -388,7 +389,7 @@
                                   <?php } ?>
                                 </div>
 
-                                <h3 class="profile-username text-center"><?php echo $row["admission_first_name"]." ".$row["admission_last_name"]; ?></h3>
+                                <h3 class="profile-username text-center"><?php echo $row["admission_first_name"]; ?></h3>
                                 <?php 
                                   $completeSessionStart = explode("-", $row["university_details_academic_start_date"]);
                                   $completeSessionEnd = explode("-", $row["university_details_academic_end_date"]);

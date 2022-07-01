@@ -1996,7 +1996,7 @@ if (isset($_POST["action"])) {
                 "15"         =>       $permission_15,
 
             );
-            $sql = "INSERT INTO `tbl_admin`
+            echo $sql = "INSERT INTO `tbl_admin`
                             (`admin_id`, `admin_name`, `admin_username`, `admin_password`, `admin_email`, `admin_mobile`, `admin_type`, `admin_permission`, `status`) 
                             VALUES 
                             (NULL,'$admin_name','$admin_username','$admin_password','$admin_email','$admin_mobile','$admin_type','" . json_encode($allPermissions) . "','$visible')

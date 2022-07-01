@@ -8,11 +8,7 @@ $con = $connection;
 
 // $_SESSION['emailid'] = 'rohit83015@gmail.com';
 if (isset($_SESSION['emailid']) && ($_SESSION['emailid'] != '')) {
-  $email = trim($_SESSION['emailid']);
-  // data retring from tbl_course_type table
-  // $course_type = "SELECT  *  FROM `tbl_course_type` WHERE `prospectus_emailid`='$email'";
-  // $coursr_result = mysqli_query($connection, $course_type);
-  //data retring from course_name table
+ // $email = trim($_SESSION['emailid']);
   $course_name = "SELECT * FROM `tbl_course` WHERE 1";
   $course_name_result = mysqli_query($connection, $course_name);
   $email = $_SESSION['emailid'];
@@ -179,11 +175,6 @@ if (isset($_SESSION['emailid']) && ($_SESSION['emailid'] != '')) {
 
                       <div class="col-4">
                         <label>Gender<span class="text-danger">*</span> </label>
-                        <!-- <select id="gender" name="add_admission_gender" class="form-control">
-                        <option value="0">Select</option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                      </select> -->
                         <input required disabled id="first_name" type="text" name="mother_name" class="form-control" value="<?= $prospectus_gender; ?>">
 
                       </div>
@@ -204,7 +195,7 @@ if (isset($_SESSION['emailid']) && ($_SESSION['emailid'] != '')) {
 
                       <div class="col-4">
                         <label>Aadhar No<span class="text-danger">*</span> </label>
-                        <input required type="text" name="add_admission_aadhar_no" class="form-control">
+                        <input required type="number" name="add_admission_aadhar_no" class="form-control">
                       </div>
 
                       <div class="col-4">
@@ -248,7 +239,7 @@ if (isset($_SESSION['emailid']) && ($_SESSION['emailid'] != '')) {
 
 
                       <div class="col-4">
-                        <label>Image<span class="text-danger">*</span> </label>
+                        <label>Image <span class="text-danger">*</span><small class="text-danger">(Max 100KB)</small> </label>
                         <input required type="file" accept="image/*" name="add_admission_profile_image" id="add_admission_profile_image" class="form-control">
                       </div>
                       <div class="col-4">
@@ -286,76 +277,6 @@ if (isset($_SESSION['emailid']) && ($_SESSION['emailid'] != '')) {
                   </div>
                 </div>
               </div>
-              <!-- <div class="card card-secondary">
-              <div class="card-header">
-                <h3 class="card-title">Decleration </h3>
-              </div> -->
-
-
-              <!-- <div class="card card-secondary">
-              <div class="card-header">
-                <h3 class="card-title">PRESENT ADDRESS</h3>
-              </div>
-
-              <div class="card-body table-responsive p-0">
-                <div class="card-body">
-                  <div class="row">
-                  <div class="col-4">
-                      
-                      <label>Parmanent Address<span class="text-danger">*</span> </label>
-                      <textarea id="address" name="add_admission_residential_address" class="form-control" style="height: 38px;"></textarea>
-                    </div>
-                    <div class="col-4">
-                      
-                      <label>Residential Address<span class="text-danger">*</span> </label>
-                      <textarea id="address" name="add_admission_residential_address" class="form-control" style="height: 38px;"></textarea>
-                    </div>
-                    <div class="col-4">
-                      <label>State<span class="text-danger">*</span> </label>
-                      <input required id="state" type="text" name="add_admission_state" class="form-control">
-                    </div>
-                  
-                    <div class="col-4">
-                      <label>District<span class="text-danger">*</span> </label>
-                      <input required type="text" name="add_admission_district" class="form-control">
-                    </div>
-                    <div class="col-4">
-                      <label>Pin Code<span class="text-danger">*</span> </label>
-                      <input required id="postal_code" type="text" name="add_admission_pin_code" class="form-control">
-                    </div>
-                  
-                  
-              
-                  </div>
-                </div>
-              </div>
-            </div> -->
-
-              <!-- <div class="card card-secondary">
-              <div class="card-header">
-                <h3 class="card-title">Parent Details</h3>
-              </div>
-
-              <div class="card-body table-responsive p-0">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-4">
-                      <label>Father Name<span class="text-danger">*</span> </label>
-                      <input required id="father_name" type="text" name="add_admission_father_name" class="form-control">
-                    </div>
-                    <div class="col-4">
-                      <label>Father Whatsapp No<span class="text-danger">*</span> </label>
-                      <input required type="text" name="add_admission_father_whatsappno" class="form-control">
-                    </div>
-                    <div class="col-4">
-                      <label>Mother Name<span class="text-danger">*</span> </label>
-                      <input required id="mother_name" type="text" name="add_admission_mother_name" class="form-control">
-                    </div>
-                  </div>
-                </div>
-                </div>
-                </div> -->
-
               <div class="card card-secondary">
                 <div class="card-header">
                   <h3 class="card-title">Academic Details</h3>
@@ -435,116 +356,11 @@ if (isset($_SESSION['emailid']) && ($_SESSION['emailid'] != '')) {
                   <div class="card-body">
                     <div class="row">
                       <div class="col-4">
-                        <label>10th Marksheet<span class="text-danger">*</span> </label>
-                        <input required type="file" accept="image/*" name="add_admission_tenth_marksheet" class="form-control">
-                      </div>
-                      <div class="col-4">
-                        <label>10th Passing Certificate<span class="text-danger">*</span> </label>
-                        <input type="file" accept="image/*" name="add_admission_tenth_passing_certificate" class="form-control">
-                      </div>
-                      <div class="col-4">
-                        <label>12th Marksheet </label>
-                        <input  type="file" accept="image/*" name="add_admission_twelve_markesheet" class="form-control">
-                      </div>
-
-                      <div class="col-4">
-                        <label>12th Passing Certificate </label>
-                        <input type="file" accept="image/*" name="add_admission_twelve_passing_certificate" class="form-control">
-                      </div>
-                      <div class="col-4">
-                        <label>Graduation Marksheet </label>
-                        <input type="file" accept="image/*" name="add_admission_graduation_marksheet" class="form-control">
-                      </div>
-                      <div class="col-4">
-                        <label>Recent Character Certificate </label>
-                        <input type="file" accept="image/*" name="add_admission_recent_character_certificate" class="form-control">
-                      </div>
-
-                      <div class="col-4">
-                        <label>Other Certificate (If applicable) </label>
-                        <input type="file" accept="image/*" name="add_admission_other_certificate" class="form-control">
-                      </div>
-                      <div class="col-4">
-                        <label>Character Certificate (If applicable) </label>
-                        <input type="file" accept="image/*" name="add_admission_character_certificate" class="form-control">
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- <div class="card card-secondary">
-              <div class="card-header">
-                <h3 class="card-title">TECHNICAL QUALIFICATION (IF ANY)</h3>
-              </div>
-
-              <div class="card-body table-responsive p-0">
-                <table class="table table-hover">
-                  <thead>
-                    <tr>
-                      <th>S.No</th>
-                      <th>Course</th>
-                      <th>Board / University</th>
-                      <th>Year Of Passing</th>
-                      <th>Percentage or CGPA</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td><input type="text" name="add_admission_course1" size="15" value=""></td>
-                      <td><input type="text" name="add_admission_board_university1" size="15" value=""></td>
-                      <td><input type="text" name="add_admission_year_of_passing1" size="15" value=""></td>
-                      <td><input type="text" name="add_admission_percentage1" size="15" value=""></td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td><input type="text" name="add_admission_course2" size="15" value=""></td>
-                      <td><input type="text" name="add_admission_board_university2" size="15" value=""></td>
-                      <td><input type="text" name="add_admission_year_of_passing2" size="15" value=""></td>
-                      <td><input type="text" name="add_admission_percentage2" size="15" value=""></td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td><input type="text" name="add_admission_course3" size="15" value=""></td>
-                      <td><input type="text" name="add_admission_board_university3" size="15" value=""></td>
-                      <td><input type="text" name="add_admission_year_of_passing3" size="15" value=""></td>
-                      <td><input type="text" name="add_admission_percentage3" size="15" value=""></td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td><input type="text" name="add_admission_course4" size="15" value=""></td>
-                      <td><input type="text" name="add_admission_board_university4" size="15" value=""></td>
-                      <td><input type="text" name="add_admission_year_of_passing4" size="15" value=""></td>
-                      <td><input type="text" name="add_admission_percentage4" size="15" value=""></td>
-                    </tr>
-                    <tr>
-                      <td>5</td>
-                      <td><input type="text" name="add_admission_course5" size="15" value=""></td>
-                      <td><input type="text" name="add_admission_board_university5" size="15" value=""></td>
-                      <td><input type="text" name="add_admission_year_of_passing5" size="15" value=""></td>
-                      <td><input type="text" name="add_admission_percentage5" size="15" value=""></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div> -->
-
-              <div class="card card-secondary">
-                <div class="card-header">
-                  <h3 class="card-title">Documents Required For Admission</h3>
-                </div>
-
-                <div class="card-body table-responsive p-0">
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-4">
-                        <label>Student Signature<span class="text-danger">*</span> </label>
+                        <label>Student Signature<span class="text-danger">*</span><small class="text-danger">(Max 100KB)</small>  </label>
                         <input required type="file" accept="image/*" name="student_sing" class="form-control">
                       </div>
                       <div class="col-4">
-                        <label>Parent Signature<span class="text-danger">*</span> </label>
+                        <label>Parent Signature<span class="text-danger">*</span> <small class="text-danger">(Max 100KB)</small> </label>
                         <input required type="file" accept="image/*" name="parent_sing" class="form-control">
                       </div>
                       <div class="col-4">
@@ -557,7 +373,7 @@ if (isset($_SESSION['emailid']) && ($_SESSION['emailid'] != '')) {
                   </div>
                 </div>
               </div>
-              <div class="card card-secondary">
+              <!-- <div class="card card-secondary">
                 <div class="card-header">
                   <h3 class="card-title">Decleration For Admission</h3>
                 </div>
@@ -576,7 +392,7 @@ if (isset($_SESSION['emailid']) && ($_SESSION['emailid'] != '')) {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
 
 
@@ -585,7 +401,7 @@ if (isset($_SESSION['emailid']) && ($_SESSION['emailid'] != '')) {
               </div>
               <div class="col-md-6">
                 <!-- <input required required type="hidden" name="action" value="add_admission" /> -->
-                <button type="submit" name="add_admission_button" class="btn btn-primary">Submit</button>
+                <button type="submit" name="add_admission_button" class="btn btn-primary">Submit & Next</button>
                 <button type="reset" class="btn btn-primary">Reset</button>
               </div>
               </form>
@@ -624,123 +440,7 @@ if (isset($_SESSION['emailid']) && ($_SESSION['emailid'] != '')) {
       <!-- AdminLTE for demo purposes -->
       <script src="dist/js/demo.js"></script>
       <!-- Page script -->
-      <!-- <script>
-      $(function() {
-        //Initialize Select2 Elements
-        $('.select2').select2()
-
-        //Initialize Select2 Elements
-        $('.select2bs4').select2({
-          theme: 'bootstrap4'
-        })
-
-        //Datemask dd/mm/yyyy
-        $('#datemask').inputmask('dd/mm/yyyy', {
-          'placeholder': 'dd/mm/yyyy'
-        })
-        //Datemask2 mm/dd/yyyy
-        $('#datemask2').inputmask('mm/dd/yyyy', {
-          'placeholder': 'mm/dd/yyyy'
-        })
-        //Money Euro
-        $('[data-mask]').inputmask()
-
-        //Date range picker
-        $('#reservation').daterangepicker()
-        //Date range picker with time picker
-        $('#reservationtime').daterangepicker({
-          timePicker: true,
-          timePickerIncrement: 30,
-          locale: {
-            format: 'MM/DD/YYYY hh:mm A'
-          }
-        })
-        //Date range as a button
-        $('#daterange-btn').daterangepicker({
-            ranges: {
-              'Today': [moment(), moment()],
-              'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-              'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-              'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-              'This Month': [moment().startOf('month'), moment().endOf('month')],
-              'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-            },
-            startDate: moment().subtract(29, 'days'),
-            endDate: moment()
-          },
-          function(start, end) {
-            $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
-          }
-        )
-
-        //Timepicker
-        $('#timepicker').datetimepicker({
-          format: 'LT'
-        })
-
-        //Bootstrap Duallistbox
-        $('.duallistbox').bootstrapDualListbox()
-
-        //Colorpicker
-        $('.my-colorpicker1').colorpicker()
-        //color picker with addon
-        $('.my-colorpicker2').colorpicker()
-
-        $('.my-colorpicker2').on('colorpickerChange', function(event) {
-          $('.my-colorpicker2 .fa-square').css('color', event.color.toString());
-        });
-
-        $("input[data-bootstrap-switch]").each(function() {
-          $(this).bootstrapSwitch('state', $(this).prop('checked'));
-        });
-
-      })
-    </script>
-    <script>
-      $(document).ready(function() {
-        $('#form_no').on('keyup', function(event) {
-          $.ajax({
-            url: 'include/view.php?action=fetch_prospectus_info',
-            type: 'POST',
-            data: $('#add_admission_form').serializeArray(),
-            success: function(result) {
-              $('#first_name').val('');
-              $('#last_name').val('');
-              $('#gender').val('0');
-              $('#father_name').val('');
-              $('#address').val('');
-              $('#country').val('');
-              $('#state').val('');
-              $('#city').val('');
-              $('#postal_code').val('');
-              $('#email_id').val('');
-              $('#dob').val('');
-              $('#mobile_no').val('');
-              $('#course').val('0');
-              if (result != "") {
-                var fullinfo = result.split('|||');
-                $('#first_name').val(fullinfo[0]);
-                $('#last_name').val(fullinfo[1]);
-                $('#gender').val(fullinfo[2]);
-                $('#father_name').val(fullinfo[3]);
-                $('#address').val(fullinfo[4]);
-                $('#country').val(fullinfo[5]);
-                $('#state').val(fullinfo[6]);
-                $('#city').val(fullinfo[7]);
-                $('#postal_code').val(fullinfo[8]);
-                $('#email_id').val(fullinfo[9]);
-                $('#dob').val(fullinfo[10]);
-                $('#mobile_no').val(fullinfo[11]);
-                $('#course').val(Number(fullinfo[12]));
-                $('#session_check').val(Number(fullinfo[13]));
-                $('#mother_name').val(fullinfo[14]);
-              }
-            }
-          });
-          event.preventDefault();
-        });
-      });
-    </script> -->
+     
     </body>
 
     </html>
@@ -761,8 +461,8 @@ if (isset($_SESSION['emailid']) && ($_SESSION['emailid'] != '')) {
 <?php
 // here i have to reicivig the data of the user from the from
 if (isset($_POST['add_admission_button'])) {
-  echo "<pre>";
-  print_r($_POST);
+  // echo "<pre>";
+  // print_r($_POST); exit;
   //educational details of the student who is appling for the admisssion
   $add_admission_high_school_board_university = $_POST['add_admission_high_school_board_university'];
   $add_admission_high_school_college_name = $_POST['add_admission_high_school_college_name'];
@@ -794,21 +494,14 @@ if (isset($_POST['add_admission_button'])) {
   // here i have to storing the data of image in variable and sending the data into the database
   $add_admission_profile_image = addslashes(file_get_contents($_FILES['add_admission_profile_image']['tmp_name']));
 
-  $add_admission_tenth_marksheet = addslashes(file_get_contents($_FILES['add_admission_tenth_marksheet']['tmp_name']));
-
-  $add_admission_tenth_passing_certificate = addslashes(file_get_contents($_FILES['add_admission_tenth_passing_certificate']['tmp_name']));
-
-  $add_admission_twelve_markesheet = addslashes(file_get_contents($_FILES['add_admission_twelve_markesheet']['tmp_name']));
-
-  $add_admission_twelve_passing_certificate = addslashes(file_get_contents($_FILES['add_admission_twelve_passing_certificate']['tmp_name']));
-
-  $add_admission_graduation_marksheet = addslashes(file_get_contents($_FILES['add_admission_graduation_marksheet']['tmp_name']));
-
-  $add_admission_recent_character_certificate = addslashes(file_get_contents($_FILES['add_admission_recent_character_certificate']['tmp_name']));
-
-  $add_admission_other_certificate = addslashes(file_get_contents($_FILES['add_admission_other_certificate']['tmp_name']));
-
-  $add_admission_character_certificate = addslashes(file_get_contents($_FILES['add_admission_character_certificate']['tmp_name']));
+    // $add_admission_tenth_marksheet = addslashes(file_get_contents($_FILES['add_admission_tenth_marksheet']['tmp_name']));
+    // $add_admission_tenth_passing_certificate = addslashes(file_get_contents($_FILES['add_admission_tenth_passing_certificate']['tmp_name']));
+    // $add_admission_twelve_markesheet = addslashes(file_get_contents($_FILES['add_admission_twelve_markesheet']['tmp_name']));
+    // $add_admission_twelve_passing_certificate = addslashes(file_get_contents($_FILES['add_admission_twelve_passing_certificate']['tmp_name']));
+    // $add_admission_graduation_marksheet = addslashes(file_get_contents($_FILES['add_admission_graduation_marksheet']['tmp_name']));
+    // $add_admission_recent_character_certificate = addslashes(file_get_contents($_FILES['add_admission_recent_character_certificate']['tmp_name']));
+    // $add_admission_other_certificate = addslashes(file_get_contents($_FILES['add_admission_other_certificate']['tmp_name']));
+    // $add_admission_character_certificate = addslashes(file_get_contents($_FILES['add_admission_character_certificate']['tmp_name']));
 
   $student_sing = addslashes(file_get_contents($_FILES['student_sing']['tmp_name']));
 
@@ -827,6 +520,16 @@ if (isset($_POST['add_admission_button'])) {
   $add_admission_password = $_POST['add_admission_password'];
 
   $add_admission_blood_group = $_POST['add_admission_blood_group'];
+  $add_date_of_admission = '';
+  $add_admission_hostel = '';
+  $add_admission_transport = '';
+  $add_admission_home_landlineno = '';
+  $add_admission_father_phoneno = $mobile;
+  $add_admission_emailid_father = $email;
+  $add_admission_father_name = $prospectus_father_name;
+  $add_admission_father_whatsappno = $mobile;
+  $add_admission_mother_name = $prospectus_mother_name;
+ 
   // echo "<pre>";
   // print_r($_POST);
   $add_admission_title = $_POST['add_admission_title'];
@@ -837,7 +540,7 @@ if (isset($_POST['add_admission_button'])) {
   $first_name = explode(" ", "$prospectus_applicant_name")[0];
   // $middle_name=explode(" ","$prospectus_applicant_name")[1];
   $visible = $status;
-  $visible_stud = 1;
+  $visible_stud = 0;
   $prospectus_session = str_replace(' ', '', $prospectus_session);
   $prospectus_course_name = str_replace(' ', '', $prospectus_course_name);
   $last_name = explode(" ", "$prospectus_applicant_name")[1];
@@ -849,24 +552,28 @@ if (isset($_POST['add_admission_button'])) {
   $prospectus_course_name = $row_data['course_id'];
   $prospectus_session = $row_data['course_duration'];
 
-  $admission_query = "INSERT INTO `tbl_admission`(`admission_form_no`, `admission_title`, `admission_first_name`,`admission_last_name`, `admission_course_name`, `admission_session`, `admission_dob`, `admission_nationality`, `admission_aadhar_no`,`admission_category`, `admission_gender`, `admission_username`, `admission_password`, `admission_blood_group`,`admission_profile_image`,`student_signature`,`parent_signature`, `admission_residential_address`, `admission_state`, `admission_city`, `admission_district`, `admission_pin_code`, `admission_mobile_student`, `admission_emailid_student`, `admission_father_name`, `admission_mother_name`,`admission_tenth_marksheet`, `admission_tenth_passing_certificate`, `admission_twelve_markesheet`, `admission_twelve_passing_certificate`, `admission_graduation_marksheet`, `admission_recent_character_certificate`, `admission_other_certificate`, `admission_character_certificate`,`status`, `stud_status`) VALUES 
-                                                 ('$admission_form_no','$add_admission_title','$prospectus_applicant_name','$last_name','$prospectus_course_name','$prospectus_session','$prospectus_dob','$add_admission_nationality','$add_admission_aadhar_no','$add_admission_category','$prospectus_gender','$prospectus_emailid','$add_admission_password','$add_admission_blood_group','$add_admission_profile_image','$student_sing','$parent_sing','$prospectus_address','$prospectus_state', '$prospectus_city',  '$prospectus_city','$prospectus_postal_code','$mobile', '$prospectus_emailid', '$prospectus_father_name', '$prospectus_mother_name','$add_admission_tenth_marksheet', '$add_admission_tenth_passing_certificate',      '$add_admission_twelve_markesheet','$add_admission_twelve_passing_certificate','$add_admission_graduation_marksheet', '$add_admission_recent_character_certificate','$add_admission_other_certificate','$add_admission_character_certificate','$visible','$visible_stud')";
+  // $admission_query = "INSERT INTO `tbl_admission`(`admission_form_no`, `admission_title`, `admission_first_name`,`admission_last_name`, `admission_course_name`, `admission_session`, `admission_dob`, `admission_nationality`, `admission_aadhar_no`,`admission_category`, `admission_gender`, `admission_username`, `admission_password`, `admission_blood_group`,`admission_profile_image`,`student_signature`,`parent_signature`, `admission_residential_address`, `admission_state`, `admission_city`, `admission_district`, `admission_pin_code`, `admission_mobile_student`, `admission_emailid_student`, `admission_father_name`, `admission_mother_name`,`admission_tenth_marksheet`, `admission_tenth_passing_certificate`, `admission_twelve_markesheet`, `admission_twelve_passing_certificate`, `admission_graduation_marksheet`, `admission_recent_character_certificate`, `admission_other_certificate`, `admission_character_certificate`,`status`, `stud_status`) VALUES 
+  $admission_query = "INSERT INTO `tbl_admission`(`admission_form_no`, `admission_title`, `admission_first_name`,`admission_last_name`, `admission_course_name`, `admission_session`, `admission_dob`, `admission_nationality`, `admission_aadhar_no`,`admission_category`, `admission_gender`, `admission_username`, `admission_password`, `admission_blood_group`,`admission_profile_image`,`student_signature`,`parent_signature`, `admission_residential_address`, `admission_state`, `admission_city`, `admission_district`, `admission_pin_code`, `admission_mobile_student`, `admission_emailid_student`, `admission_father_name`, `admission_mother_name`,`status`, `stud_status`) VALUES 
+                                                 ('$admission_form_no','$add_admission_title','$prospectus_applicant_name','$last_name','$prospectus_course_name','$prospectus_session','$prospectus_dob','$add_admission_nationality','$add_admission_aadhar_no','$add_admission_category','$prospectus_gender','$prospectus_emailid','$add_admission_password','$add_admission_blood_group','$add_admission_profile_image','$student_sing','$parent_sing','$prospectus_address','$prospectus_state', '$prospectus_city',  '$prospectus_city','$prospectus_postal_code','$mobile', '$prospectus_emailid', '$prospectus_father_name', '$prospectus_mother_name','$visible','$visible_stud')";
+                                                //  ('$admission_form_no','$add_admission_title','$prospectus_applicant_name','$last_name','$prospectus_course_name','$prospectus_session','$prospectus_dob','$add_admission_nationality','$add_admission_aadhar_no','$add_admission_category','$prospectus_gender','$prospectus_emailid','$add_admission_password','$add_admission_blood_group','$add_admission_profile_image','$student_sing','$parent_sing','$prospectus_address','$prospectus_state', '$prospectus_city',  '$prospectus_city','$prospectus_postal_code','$mobile', '$prospectus_emailid', '$prospectus_father_name', '$prospectus_mother_name','$add_admission_tenth_marksheet', '$add_admission_tenth_passing_certificate',      '$add_admission_twelve_markesheet','$add_admission_twelve_passing_certificate','$add_admission_graduation_marksheet', '$add_admission_recent_character_certificate','$add_admission_other_certificate','$add_admission_character_certificate','$visible','$visible_stud')";
 
   $result = mysqli_query($connection, $admission_query);
   if ($result) {
-    echo $update_education_details_query = "UPDATE `tbl_admission` SET `admission_high_school_board_university`='$add_admission_high_school_board_university',`admission_high_school_college_name`='$add_admission_high_school_college_name',`admission_high_school_passing_year`='$add_admission_high_school_passing_year',`admission_high_school_per`='$add_admission_high_school_per',`admission_high_school_subjects`='$add_admission_high_school_subjects',`admission_intermediate_board_university`='$add_admission_intermediate_board_university',`admission_intermediate_college_name`='$add_admission_intermediate_college_name',`admission_intermediate_passing_year`='$add_admission_intermediate_passing_year',`admission_intermediate_per`='$add_admission_intermediate_per',`admission_intermediate_subjects`='$add_admission_intermediate_subjects',`admission_graduation_board_university`='$add_admission_graduation_board_university',`admission_graduation_college_name`='$add_admission_graduation_college_name',`admission_graduation_passing_year`='$add_admission_graduation_passing_year',`admission_graduation_per`='$add_admission_graduation_per',`admission_graduation_subjects`='$add_admission_graduation_subjects',`admission_post_graduation_board_university`='$add_admission_post_graduation_board_university',`admission_post_graduation_college_name`='$add_admission_post_graduation_college_name',`admission_post_graduation_others`='$add_admission_post_graduation_others',`admission_post_graduation_per`='$add_admission_post_graduation_per',`admission_post_graduation_subjects`='$add_admission_post_graduation_subjects',`admission_others_board_university`='$add_admission_others_board_university',`admission_others_college_name`='$add_admission_others_college_name',`admission_others_passing_year`='$add_admission_others_passing_year',`admission_others_per`='$add_admission_others_per',`admission_others_subjects`='$add_admission_others_subjects' WHERE `admission_emailid_student`='$prospectus_emailid'";
+    $update_education_details_query = "UPDATE `tbl_admission` SET `admission_high_school_board_university`='$add_admission_high_school_board_university',`admission_high_school_college_name`='$add_admission_high_school_college_name',`admission_high_school_passing_year`='$add_admission_high_school_passing_year',`admission_high_school_per`='$add_admission_high_school_per',`admission_high_school_subjects`='$add_admission_high_school_subjects',`admission_intermediate_board_university`='$add_admission_intermediate_board_university',`admission_intermediate_college_name`='$add_admission_intermediate_college_name',`admission_intermediate_passing_year`='$add_admission_intermediate_passing_year',`admission_intermediate_per`='$add_admission_intermediate_per',`admission_intermediate_subjects`='$add_admission_intermediate_subjects',`admission_graduation_board_university`='$add_admission_graduation_board_university',`admission_graduation_college_name`='$add_admission_graduation_college_name',`admission_graduation_passing_year`='$add_admission_graduation_passing_year',`admission_graduation_per`='$add_admission_graduation_per',`admission_graduation_subjects`='$add_admission_graduation_subjects',`admission_post_graduation_board_university`='$add_admission_post_graduation_board_university',`admission_post_graduation_college_name`='$add_admission_post_graduation_college_name',`admission_post_graduation_others`='$add_admission_post_graduation_others',`admission_post_graduation_per`='$add_admission_post_graduation_per',`admission_post_graduation_subjects`='$add_admission_post_graduation_subjects',`admission_others_board_university`='$add_admission_others_board_university',`admission_others_college_name`='$add_admission_others_college_name',`admission_others_passing_year`='$add_admission_others_passing_year',`admission_others_per`='$add_admission_others_per',`admission_others_subjects`='$add_admission_others_subjects' WHERE `admission_emailid_student`='$prospectus_emailid'";
     $update_education_details_result = mysqli_query($connection, $update_education_details_query);
     if ($update_education_details_result) {
       echo "<script>
-      window.location.replace('./thankyou.php')
+      window.location.replace('./admission_attachment.php')
     </script>";
     }
   } else {
-    $update_admission_query = "UPDATE `tbl_admission` SET `admission_form_no`='$add_admission_form_no',`admission_no`='$add_admission_no',`admission_title`='$add_admission_title',`admission_first_name`='$prospectus_applicant_name',`admission_course_name`='$prospectus_course_name',`admission_session`='$prospectus_session',`admission_dob`='$prospectus_dob',`admission_nationality`='$add_admission_nationality',`admission_aadhar_no`='$add_admission_aadhar_no',`date_of_admission`='$add_date_of_admission',`admission_category`='$add_admission_category',`admission_gender`='$prospectus_gender',`admission_username`='$prospectus_emailid',`admission_password`='$add_admission_password',`admission_blood_group`='$add_admission_blood_group',`admission_hostel`='$add_admission_hostel',`admission_transport`='$add_admission_transport',`admission_profile_image`='$add_admission_profile_image',`student_signature`='$student_sing',`parent_signature`='$parent_sing',`admission_residential_address`='$prospectus_address',`admission_state`='$prospectus_state',`admission_city`='$prospectus_city',`admission_district`='$prospectus_city',`admission_pin_code`='$prospectus_postal_code',`admission_home_landlineno`='$add_admission_home_landlineno',`admission_mobile_student`='$mobile',`admission_father_phoneno`='$add_admission_father_phoneno',`admission_emailid_father`='$add_admission_emailid_father',`admission_father_name`='$add_admission_father_name',`admission_father_whatsappno`='$add_admission_father_whatsappno',`admission_mother_name`='$add_admission_mother_name',`admission_high_school_board_university`='$add_admission_high_school_board_university',`admission_high_school_college_name`='$add_admission_high_school_college_name',`admission_high_school_passing_year`='$add_admission_high_school_passing_year',`admission_high_school_per`='$add_admission_high_school_per',`admission_high_school_subjects`='$add_admission_high_school_subjects',`admission_intermediate_board_university`='$add_admission_intermediate_board_university',`admission_intermediate_college_name`='$add_admission_intermediate_college_name',`admission_intermediate_passing_year`='$add_admission_intermediate_passing_year',`admission_intermediate_per`='$add_admission_intermediate_per',`admission_intermediate_subjects`='$add_admission_intermediate_subjects',`admission_graduation_board_university`='$add_admission_graduation_board_university',`admission_graduation_college_name`='$add_admission_graduation_college_name',`admission_graduation_passing_year`='$add_admission_graduation_passing_year',`admission_graduation_per`='$add_admission_graduation_per',`admission_graduation_subjects`='$add_admission_graduation_subjects',`admission_post_graduation_board_university`='$add_admission_post_graduation_board_university',`admission_post_graduation_college_name`='$add_admission_post_graduation_college_name',`admission_post_graduation_others`='$add_admission_post_graduation_others',`admission_post_graduation_per`='$add_admission_post_graduation_per',`admission_post_graduation_subjects`='$add_admission_post_graduation_subjects',`admission_others_board_university`='$add_admission_others_board_university',`admission_others_college_name`='$add_admission_others_college_name',`admission_others_passing_year`='$add_admission_others_passing_year',`admission_others_per`='$add_admission_others_per',`admission_others_subjects`='$add_admission_others_subjects',`admission_tenth_marksheet`='$add_admission_tenth_marksheet',`admission_tenth_passing_certificate`='$add_admission_tenth_passing_certificate',`admission_twelve_markesheet`='$add_admission_twelve_markesheet',`admission_twelve_passing_certificate`='$add_admission_twelve_passing_certificate',`admission_graduation_marksheet`='$add_admission_graduation_marksheet',`admission_recent_character_certificate`='$add_admission_recent_character_certificate',`admission_other_certificate`='$add_admission_other_certificate',`admission_character_certificate`='$add_admission_character_certificate',`admission_course1`='$add_admission_course_name',`admission_board_university1`='$add_admission_board_university1',`admission_year_of_passing1`='$add_admission_year_of_passing1',`admission_percentage1`='$add_admission_percentage1',`admission_course2`='$add_admission_course2',`admission_board_university2`='$add_admission_board_university2',`admission_year_of_passing2`='$add_admission_year_of_passing2',`admission_percentage2`='$add_admission_percentage2',`admission_course3`='$add_admission_course3',`admission_board_university3`='$add_admission_board_university3',`admission_year_of_passing3`='$add_admission_year_of_passing3',`admission_percentage3`='$add_admission_percentage3',`admission_course4`='$add_admission_course4',`admission_board_university4`='$add_admission_board_university4',`admission_year_of_passing4`='$add_admission_year_of_passing4',`admission_percentage4`='$add_admission_percentage4',`admission_course5`='$add_admission_course5',`admission_board_university5`='$add_admission_board_university5',`admission_year_of_passing5`='$add_admission_year_of_passing5',`admission_percentage5`='$add_admission_percentage5',`admission_name_of_org1`='$add_admission_name_of_org1',`admission_designation1`='$add_admission_designation1',`admission_duration1`='$add_admission_duration1',`stud_status`='1' WHERE `admission_emailid_student`='$prospectus_emailid'";
+    $update_admission_query = "UPDATE `tbl_admission` SET `admission_form_no`='$admission_form_no',`admission_no`='$prospectus_session',`admission_title`='$add_admission_title',`admission_first_name`='$prospectus_applicant_name',`admission_course_name`='$prospectus_course_name',`admission_session`='$prospectus_session',`admission_dob`='$prospectus_dob',`admission_nationality`='$add_admission_nationality',`admission_aadhar_no`='$add_admission_aadhar_no',`date_of_admission`='$add_date_of_admission',`admission_category`='$add_admission_category',`admission_gender`='$prospectus_gender',`admission_username`='$prospectus_emailid',`admission_password`='$add_admission_password',`admission_blood_group`='$add_admission_blood_group',`admission_hostel`='$add_admission_hostel',`admission_transport`='$add_admission_transport',`admission_profile_image`='$add_admission_profile_image',`student_signature`='$student_sing',`parent_signature`='$parent_sing',`admission_residential_address`='$prospectus_address',`admission_state`='$prospectus_state',`admission_city`='$prospectus_city',`admission_district`='$prospectus_city',`admission_pin_code`='$prospectus_postal_code',`admission_home_landlineno`='$add_admission_home_landlineno',`admission_mobile_student`='$mobile',`admission_father_phoneno`='$add_admission_father_phoneno',`admission_emailid_father`='$add_admission_emailid_father',`admission_father_name`='$add_admission_father_name',`admission_father_whatsappno`='$add_admission_father_whatsappno',`admission_mother_name`='$add_admission_mother_name'
+    ,`admission_high_school_board_university`='$add_admission_high_school_board_university',`admission_high_school_college_name`='$add_admission_high_school_college_name',`admission_high_school_passing_year`='$add_admission_high_school_passing_year',`admission_high_school_per`='$add_admission_high_school_per',`admission_high_school_subjects`='$add_admission_high_school_subjects',`admission_intermediate_board_university`='$add_admission_intermediate_board_university',`admission_intermediate_college_name`='$add_admission_intermediate_college_name',`admission_intermediate_passing_year`='$add_admission_intermediate_passing_year',`admission_intermediate_per`='$add_admission_intermediate_per',`admission_intermediate_subjects`='$add_admission_intermediate_subjects',`admission_graduation_board_university`='$add_admission_graduation_board_university',`admission_graduation_college_name`='$add_admission_graduation_college_name',`admission_graduation_passing_year`='$add_admission_graduation_passing_year',`admission_graduation_per`='$add_admission_graduation_per',`admission_graduation_subjects`='$add_admission_graduation_subjects',`admission_post_graduation_board_university`='$add_admission_post_graduation_board_university',`admission_post_graduation_college_name`='$add_admission_post_graduation_college_name',`admission_post_graduation_others`='$add_admission_post_graduation_others',`admission_post_graduation_per`='$add_admission_post_graduation_per',`admission_post_graduation_subjects`='$add_admission_post_graduation_subjects',`admission_others_board_university`='$add_admission_others_board_university',`admission_others_college_name`='$add_admission_others_college_name',`admission_others_passing_year`='$add_admission_others_passing_year',`admission_others_per`='$add_admission_others_per',`admission_others_subjects`='$add_admission_others_subjects',`stud_status`='0' WHERE `admission_emailid_student`='$prospectus_emailid'";
+    // ,`admission_high_school_board_university`='$add_admission_high_school_board_university',`admission_high_school_college_name`='$add_admission_high_school_college_name',`admission_high_school_passing_year`='$add_admission_high_school_passing_year',`admission_high_school_per`='$add_admission_high_school_per',`admission_high_school_subjects`='$add_admission_high_school_subjects',`admission_intermediate_board_university`='$add_admission_intermediate_board_university',`admission_intermediate_college_name`='$add_admission_intermediate_college_name',`admission_intermediate_passing_year`='$add_admission_intermediate_passing_year',`admission_intermediate_per`='$add_admission_intermediate_per',`admission_intermediate_subjects`='$add_admission_intermediate_subjects',`admission_graduation_board_university`='$add_admission_graduation_board_university',`admission_graduation_college_name`='$add_admission_graduation_college_name',`admission_graduation_passing_year`='$add_admission_graduation_passing_year',`admission_graduation_per`='$add_admission_graduation_per',`admission_graduation_subjects`='$add_admission_graduation_subjects',`admission_post_graduation_board_university`='$add_admission_post_graduation_board_university',`admission_post_graduation_college_name`='$add_admission_post_graduation_college_name',`admission_post_graduation_others`='$add_admission_post_graduation_others',`admission_post_graduation_per`='$add_admission_post_graduation_per',`admission_post_graduation_subjects`='$add_admission_post_graduation_subjects',`admission_others_board_university`='$add_admission_others_board_university',`admission_others_college_name`='$add_admission_others_college_name',`admission_others_passing_year`='$add_admission_others_passing_year',`admission_others_per`='$add_admission_others_per',`admission_others_subjects`='$add_admission_others_subjects',`admission_course1`='$add_admission_course_name',`admission_board_university1`='$add_admission_board_university1',`admission_year_of_passing1`='$add_admission_year_of_passing1',`admission_percentage1`='$add_admission_percentage1',`admission_course2`='$add_admission_course2',`admission_board_university2`='$add_admission_board_university2',`admission_year_of_passing2`='$add_admission_year_of_passing2',`admission_percentage2`='$add_admission_percentage2',`admission_course3`='$add_admission_course3',`admission_board_university3`='$add_admission_board_university3',`admission_year_of_passing3`='$add_admission_year_of_passing3',`admission_percentage3`='$add_admission_percentage3',`admission_course4`='$add_admission_course4',`admission_board_university4`='$add_admission_board_university4',`admission_year_of_passing4`='$add_admission_year_of_passing4',`admission_percentage4`='$add_admission_percentage4',`admission_course5`='$add_admission_course5',`admission_board_university5`='$add_admission_board_university5',`admission_year_of_passing5`='$add_admission_year_of_passing5',`admission_percentage5`='$add_admission_percentage5',`admission_name_of_org1`='$add_admission_name_of_org1',`admission_designation1`='$add_admission_designation1',`admission_duration1`='$add_admission_duration1',`stud_status`='1' WHERE `admission_emailid_student`='$prospectus_emailid'";
     $update_admission_result = mysqli_query($con, $update_admission_query);
     if ($update_admission_result) {
       echo "<script>
-      window.location.replace('./thankyou.php')
+      window.location.replace('./admission_attachment.php')
     </script>";
     }
   }
