@@ -201,7 +201,7 @@ $row = $result->fetch_assoc();
                     <!-- /.row -->
                     <!-- Main row -->
                 </div>
-                
+
             </section>
             <section class="content">
                 <div class="container-fluid">
