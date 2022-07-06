@@ -18,7 +18,7 @@ if (isset($_SESSION['emailid']) && ($_SESSION['emailid'] != '')) {
   $row = mysqli_fetch_array($propactus_details);
   $prospectus_emailid = $row['prospectus_emailid'];
   // course details
- 
+//  
   // address details
    $status = $row['status'];
 
