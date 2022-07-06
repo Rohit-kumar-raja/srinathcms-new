@@ -79,8 +79,9 @@ error_reporting(0);
 <body class="body_pop" style="color:#0d1065;">
   <p style="position: fixed;right: 3%;">
     <a href="" id="printbutton" value="&nbsp;Print" onclick="return printing();"><img src="images/print.jpg" style="height: 80px;"></a>
-  </p>
-  <input type="text" id="reg_no_value" onkeyup="reg_no(this.value)" placeholder="Enter registration number">
+  </p>]
+  <input type="text" id="reg_no_value" onkeyup="reg_no(this.value)" placeholder="Enter Roll number">
+  <input type="text" id="roll_no_value" onkeyup="roll_no(this.value)" placeholder="Enter registration number">
   <table width="740" border="0" align="center" class="tb2_grid" style="background-image: url('images/admit_card_watermark.jpg') ; background-repeat: no-repeat;
     background-position: center;
     background-size: cover;">
@@ -441,7 +442,7 @@ error_reporting(0);
                 <tr colspan="3">
                   <td>
                     <table width="100%">
-                      <!-- <td class="narmal">CENTRE NAME: SRINATH UNIVERSITY, JAMSHEDPUR</br>ROLL NO: <?php echo '21000' ?><span id="reg_no_data1" ></span></td> -->
+                      <td class="narmal">CENTRE NAME: SRINATH UNIVERSITY, JAMSHEDPUR</br>ROLL NO: <span id="roll_no_data1" ></span></td>
                       <!-- <td class="narmal">LOG IN TIME: <?php echo strtoupper($row_semester["exam_reporting_time"]) ?> </br>TIME OF EXAMINATION: <?php echo strtoupper($row_semester["time_of_examination"]) ?></td> -->
                     </table>
                   </td>
@@ -610,6 +611,7 @@ error_reporting(0);
   <script type="text/javaScript">
     function printing(){
     document.getElementById("reg_no_value").style.display = "none";
+    document.getElementById("roll_no_value").style.display = "none";
 	  document.getElementById("printbutton").style.display = "none";
 	  window.print();
 	  window.close();
@@ -617,6 +619,11 @@ error_reporting(0);
 function reg_no(data){
   document.getElementById("reg_no_data").innerText=data;
   document.getElementById("reg_no_data1").innerText=data;
+
+  
+}
+function roll_no(data){
+  document.getElementById("roll_no_data1").innerText=data;
 
   
 }
