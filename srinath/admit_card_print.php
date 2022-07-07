@@ -79,7 +79,7 @@ error_reporting(0);
 <body class="body_pop" style="color:#0d1065;">
   <p style="position: fixed;right: 3%;">
     <a href="" id="printbutton" value="&nbsp;Print" onclick="return printing();"><img src="images/print.jpg" style="height: 80px;"></a>
-  </p>]
+  </p>
   <input type="text" id="reg_no_value" onkeyup="reg_no(this.value)" placeholder="Enter registration number">
   <input type="text" id="roll_no_value" onkeyup="roll_no(this.value)" placeholder="Enter Roll  number">
   <table width="740" border="0" align="center" class="tb2_grid" style="background-image: url('images/admit_card_watermark.jpg') ; background-repeat: no-repeat;
