@@ -525,18 +525,18 @@ error_reporting(0);
         <td style=" margin-right: 50px;
   margin-left: 80px;">
           <center><b style="color:#0d1065;"><u style="font-size: 16px;"><br />
-                READ VERY CAREFULLY, DO NOT IGNORE ANY INFORMATION
+          READ VERY CAREFULLY, DO NOT IGNORE ANY INFORMATION
               </u></b></center>
           <ol style="font-size:14px;text-align: justify;color:#0d1065;">
             <p><b style="font-size: 16px;">PLEASE SPEND SUFFICIENT TIME TO READ ALL THESE BELOW MENTIONED DETAILS, TO AVOID ANY KIND OF LOSS, CONFUSION OR MISUNDERSTANDINGS...</b></p>
             <li>The candidate must reach centre 15 minutes before exam timing.</li>
-            <li> Candidates are advised to carry their Admit Card along with them .</li>
-            <li> Candidates must carry "Any one of the original and valid Photo Identification Proof issued by the Government..</li>
+            <li> Candidates are advised to carry their Admit Card along with them.</li>
+            <li> Candidates must carry any one of the original and valid “Photo Identification Proof” issued by the Government..</li>
             <li>No candidates should adopt any unfair means or indulge in any unfair examination practices as the examination centers are under surveillance of CCTV .</li>
-            <li>Candidates are advised to check the website regularly.They should also check their mailbox on the registered E_mail address and SMS in their registered Mobile no.for latest updates and information.</li>
-            <li>Use of Calculators, Mobile phone etc, is Not permitted ,Plain sheet would be provided for rough work . Candidates should bring their own transparent pen/pencil. On completion of the exam , candidates would have to return the used sheet to the invigilator.</li>
+            <li>Candidates are advised to check the website regularly. They should also check their mailbox on the registered email address and SMS in their registered mobile number for latest updates and information.</li>
+            <li>Use of Calculators, Mobile etc, is not permitted; Plain sheet would be provided for rough work. Candidates should bring their own transparent pen/pencil. On completion of the exam, candidates would have to return the used sheet to the invigilator.</li>
             <p>
-              “If you read all the instructions very careful, then you will not face any issue during your exam. Good Luck.”
+            “If you read all the instructions very careful, then you will not face any issue during your exam. Good Luck.”
             </p>
           </ol>
         </td>
