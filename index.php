@@ -104,7 +104,7 @@ if (isset($_POST['done'])) {
     <nav class="whitenav">
         <div class="nav-wrapper">
             <a href="index.php">
-                <img  class="img-fluid" src="./asset/img/logo.png" alt="Srinath logo">
+                <img class="img-fluid" src="./asset/img/logo.png" alt="Srinath logo">
             </a>
 
             <ul class="right">
@@ -115,8 +115,8 @@ if (isset($_POST['done'])) {
         </div>
     </nav>
     </div>
-    <div class="container pl-5 pr-5">
-        <div class="row ">
+    <div class="container ">
+        <div class="row p-1 ">
             <div class="col-sm-8  p-0 ">
                 <div class="login-box">
 
@@ -174,7 +174,7 @@ if (isset($_POST['done'])) {
 
             </div>
             <div class="col-sm-4">
-                <img class="es-margin" src="./asset/img/index_banner.jpeg" alt="">
+                <img class="es-margin img-fluid " src="./asset/img/index_banner.jpeg" alt="">
             </div>
 
         </div>
