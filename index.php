@@ -108,7 +108,7 @@ if (isset($_POST['done'])) {
             </a>
 
             <ul class="right">
-                <div class="nav-btn d-sm-none d-md-none d-lg-inline-block">
+                <div class="nav-btn  d-lg-inline-block">
                     <a href="admission.php" target="blank">Admission <?php echo date('Y') ?></a>
                 </div>
             </ul>
